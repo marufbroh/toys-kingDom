@@ -75,7 +75,7 @@ const Navbar = () => {
                     </div>
                     <Link to='/'>
                         <h1 className='text-2xl lg:text-4xl font-bold tracking-wide text-white cursor-pointer'>
-                            Toys Kingdom
+                            Toys KingDom
                         </h1>
                     </Link>
                 </div>
