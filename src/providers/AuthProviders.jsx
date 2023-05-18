@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
 import { app } from '../firebase/firebase.config';
 const auth = getAuth(app)
 
@@ -14,11 +14,26 @@ const AuthProviders = ({ children }) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
+    const updateUserData = (name, photoURL) => {
+        setLoading(true)
+        return updateProfile(auth.currentUser, {
+            displayName: name, photoURL: photoURL
+        }).then(() => {
+            // Profile updated!
+            // ...
+        }).catch((error) => {
+            console.log(error.message);
+            // An error occurred
+            // ...
+        });
+    }
+
     const authInfo = {
         user,
         loading,
         setLoading,
         createUser,
+        updateUserData,
     }
 
     return (
