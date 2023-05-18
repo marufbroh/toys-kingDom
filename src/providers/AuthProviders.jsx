@@ -65,8 +65,6 @@ const AuthProviders = ({ children }) => {
         logOut
     }
 
-   
-
     return (
         <AuthContext.Provider value={authInfo}>
             {children}
