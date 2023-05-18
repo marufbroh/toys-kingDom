@@ -4,7 +4,7 @@ import { FaGoogle } from 'react-icons/fa';
 const Login = () => {
     return (
         <div className="py-6 lg:py-24">
-            <div className=" bg-white rounded-lg shadow-lg mx-auto max-w-sm lg:max-w-xl">
+            <div className=" bg-slate-100 rounded-lg shadow-lg mx-auto max-w-sm lg:max-w-xl">
                 <form className="w-full p-8">
                     <h2 className="text-3xl font-semibold text-orange-950 text-center">Login</h2>
                     <div className="mt-4">

@@ -1,12 +1,43 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProviders';
+import toast from 'react-hot-toast';
 
 const Register = () => {
+    const { createUser } = useContext(AuthContext);
+
+    const handleRegister = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const photoUrl = form.photoUrl.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        // console.log(name, photoUrl, email, password);
+
+        if (password.length < 6) {
+            return toast.error("Minimum six characters")
+        }
+
+        createUser(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                // console.log(loggedUser);
+                toast.success("User Successfully Created")
+                // updateUserData(name, photoUrl)
+                form.reset()
+            })
+            .catch(error => {
+                toast.error(error.message)
+            })
+    }
+
     return (
         <div className="py-6 lg:py-24">
-            <div className=" bg-white rounded-lg shadow-lg mx-auto max-w-sm lg:max-w-xl">
-                <form className="w-full p-8">
+            <div className=" bg-slate-100 rounded-lg shadow-lg mx-auto max-w-sm lg:max-w-xl">
+                <form onSubmit={handleRegister} className="w-full p-8">
                     <h2 className="text-3xl font-semibold text-orange-950 text-center">Register</h2>
                     <div className="mt-4">
                         <label className="block text-orange-950 text-sm font-bold mb-2">Your Name</label>
