@@ -1,11 +1,36 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
+import { AuthContext } from '../../providers/AuthProviders';
+import toast from 'react-hot-toast';
+
 const Login = () => {
+    const { signIn } = useContext(AuthContext);
+
+    const handleSignIn = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        signIn(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                // console.log(loggedUser);
+                toast.success("User Successfully Logged")
+                // navigate(from, { replace: true })
+                form.reset()
+            })
+            .catch(error => {
+                toast.error(error.message)
+            })
+    }
+
+
     return (
         <div className="py-6 lg:py-24">
             <div className=" bg-slate-100 rounded-lg shadow-lg mx-auto max-w-sm lg:max-w-xl">
-                <form className="w-full p-8">
+                <form onSubmit={handleSignIn} className="w-full p-8">
                     <h2 className="text-3xl font-semibold text-orange-950 text-center">Login</h2>
                     <div className="mt-4">
                         <label className="block text-orange-950 text-sm font-bold mb-2">Email Address</label>
