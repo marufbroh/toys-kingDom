@@ -6,10 +6,18 @@
     @apply bg-orange-950 ;
   }
 
+  .btn-primary {
+    @apply font-medium shadow-sm px-3 py-1 lg:py-2 text-lg rounded-md text-white bg-amber-600 hover:bg-black;
+  }
+  
+  .btn-outlined {
+    @apply font-medium shadow-sm px-3 py-1 text-lg rounded-md text-white border-2 border-white;
+  }
+
 .active {
     @apply font-medium tracking-wide text-white transition-colors duration-200;
   }
   
   .default {
-    @apply font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-white;
+    @apply font-medium tracking-wide text-gray-300 transition-colors duration-200 hover:text-white;
   }
