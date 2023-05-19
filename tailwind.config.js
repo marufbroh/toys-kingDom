@@ -8,7 +8,7 @@ export default {
     extend: {},
   },
   daisyui: {
-    themes: false,
+    themes: ["wireframe"],
   },
   plugins: [require("daisyui")],
 }
