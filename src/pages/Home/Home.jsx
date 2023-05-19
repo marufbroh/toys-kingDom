@@ -1,9 +1,13 @@
 import React from 'react';
+import ShopCategory from './ShopCategory';
+import Banner from './Banner';
+
 
 const Home = () => {
     return (
         <div>
-            Home
+            <Banner />
+            <ShopCategory />
         </div>
     );
 };
