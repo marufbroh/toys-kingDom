@@ -7,7 +7,7 @@
   }
 
   .btn-primary {
-    @apply font-medium shadow-sm px-3 py-1 lg:py-2 text-lg rounded-md text-white bg-amber-600 hover:bg-black;
+    @apply font-medium shadow-sm px-3 py-1 lg:py-2 text-lg rounded-md text-white bg-cyan-500 hover:bg-black;
   }
   
   .btn-outlined {
