@@ -3,6 +3,7 @@ import { AuthContext } from '../../providers/AuthProviders';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import MyToysRow from './MyToysRow';
+import UpdateToyModal from './UpdateToyModal';
 
 const MyToys = () => {
     const { user } = useContext(AuthContext)
@@ -14,6 +15,10 @@ const MyToys = () => {
             .then(res => res.json())
             .then(data => setMyToys(data))
     }, [url])
+
+    // const updateToyDetails = (id) => {
+
+    // }
 
     return (
         <div className="overflow-x-auto w-full container mx-auto my-12">
@@ -35,6 +40,7 @@ const MyToys = () => {
                     }
                 </tbody>
             </table>
+            
         </div>
     );
 };
