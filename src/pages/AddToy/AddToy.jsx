@@ -39,7 +39,7 @@ const AddToy = () => {
                             <span className="label-text font-bold">Toy Name</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" {...register("toy_name")} className="input input-bordered w-full" />
+                            <input type="text" {...register("toy_name")} required className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2">
@@ -47,7 +47,7 @@ const AddToy = () => {
                             <span className="label-text font-bold">Toy Image Link</span>
                         </label>
                         <label className="input-group">
-                            <input type="url" {...register("toy_img")} className="input input-bordered w-full" />
+                            <input type="url" {...register("toy_img")} required className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -66,7 +66,7 @@ const AddToy = () => {
                             <span className="label-text font-bold">Price</span>
                         </label>
                         <label className="input-group">
-                            <input type="number" step="any" {...register("price")} placeholder="$" className="input input-bordered w-full" />
+                            <input type="number" step="any" {...register("price")} required placeholder="$" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2">
@@ -74,7 +74,7 @@ const AddToy = () => {
                             <span className="label-text font-bold">Quantity</span>
                         </label>
                         <label className="input-group">
-                            <input type="number" {...register("quantity")} className="input input-bordered w-full" />
+                            <input type="number" {...register("quantity")} required className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -83,7 +83,7 @@ const AddToy = () => {
                         <label className="label">
                             <span className="label-text font-bold">Sub-Category</span>
                         </label>
-                        <select type="text" {...register("sub_category")} className="select select-bordered w-full">
+                        <select type="text" {...register("sub_category")} required className="select select-bordered w-full">
                             <option disabled selected>Pick one</option>
                             <option value="sports-car">Sports Car</option>
                             <option value="police-car">Police Car</option>
@@ -95,7 +95,7 @@ const AddToy = () => {
                             <span className="label-text font-bold">Rating</span>
                         </label>
                         <label className="input-group">
-                            <input type="number" step="any" {...register("rating", { min: 1, max: 5 })} className="input input-bordered w-full" />
+                            <input type="number" step="any" {...register("rating", { min: 1, max: 5 })} required className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2">
@@ -103,7 +103,7 @@ const AddToy = () => {
                             <span className="label-text font-bold">Total Review</span>
                         </label>
                         <label className="input-group">
-                            <input type="number" {...register("review")} className="input input-bordered w-full" />
+                            <input type="number" {...register("review")} required className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -113,7 +113,7 @@ const AddToy = () => {
                         <span className="label-text font-bold">Detail Description</span>
                     </label>
                     <label className="input-group">
-                        <textarea {...register("description")} className="textarea textarea-bordered textarea-lg w-full" placeholder="Toy Description"></textarea>
+                        <textarea {...register("description")} required className="textarea textarea-bordered textarea-lg w-full" placeholder="Toy Description"></textarea>
                     </label>
                 </div>
                 <div className='flex w-full mt-4'>

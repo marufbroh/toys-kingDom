@@ -10,7 +10,7 @@ const SingleToyDetails = () => {
     return (
         <div className='container mx-auto my-12'>
             <div className="card lg:card-side bg-base-100 shadow-xl">
-                <figure className='lg:w-1/2'><img src={toy_img} alt="Toy Image" /></figure>
+                <figure className='lg:w-1/2 p-10'><img className='rounded-xl' src={toy_img} alt="Toy Image" /></figure>
                 <div className="card-body lg:w-1/2 h-full my-auto">
                     <h2 className="card-title font-bold text-4xl text-cyan-500">{toy_name}</h2>
                     <div>
