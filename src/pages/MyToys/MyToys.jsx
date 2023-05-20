@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProviders';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import MyToysRow from './MyToysRow';
 
 const MyToys = () => {
     const { user } = useContext(AuthContext)
@@ -13,10 +14,27 @@ const MyToys = () => {
             .then(res => res.json())
             .then(data => setMyToys(data))
     }, [url])
-    console.log(mytoys);
+
     return (
-        <div>
-            My Toys
+        <div className="overflow-x-auto w-full container mx-auto my-12">
+            <table className="table w-full">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Toy Image</th>
+                        <th>Toy Name</th>
+                        <th>Sub-category</th>
+                        <th>Available Quantity</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        mytoys.map((toy, index) => <MyToysRow key={toy._id} toy={toy} index={index} />)
+                    }
+                </tbody>
+            </table>
         </div>
     );
 };
