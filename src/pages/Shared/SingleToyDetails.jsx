@@ -13,6 +13,10 @@ const SingleToyDetails = () => {
                 <figure className='lg:w-1/2'><img src={toy_img} alt="Toy Image" /></figure>
                 <div className="card-body lg:w-1/2 h-full my-auto">
                     <h2 className="card-title font-bold text-4xl text-cyan-500">{toy_name}</h2>
+                    <div>
+                    <p className='text-md'>{seller_name} (Seller)</p>
+                    <p className='text-md'>{seller_email}</p>
+                    </div>
                     <div className='flex gap-2'>
                         <Rating
                             style={{ maxWidth: 100 }}
