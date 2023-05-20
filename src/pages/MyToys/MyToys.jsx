@@ -3,7 +3,7 @@ import { AuthContext } from '../../providers/AuthProviders';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import MyToysRow from './MyToysRow';
-import UpdateToyModal from './UpdateToyModal';
+import Swal from 'sweetalert2';
 
 const MyToys = () => {
     const { user } = useContext(AuthContext)
@@ -16,9 +16,37 @@ const MyToys = () => {
             .then(data => setMyToys(data))
     }, [url])
 
-    // const updateToyDetails = (id) => {
-
-    // }
+    const handleDelete = id => {
+        // console.log(id);
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/my-toys/${id}`, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        // console.log(data);
+                        if (data.deletedCount > 0) {
+                            const remaining = mytoys.filter(toy => toy._id !== id);
+                            setMyToys(remaining)
+                            Swal.fire(
+                                'Deleted!',
+                                'Your coffee has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
+            }
+        })
+    }
 
     return (
         <div className="overflow-x-auto w-full container mx-auto my-12">
@@ -36,11 +64,11 @@ const MyToys = () => {
                 </thead>
                 <tbody>
                     {
-                        mytoys.map((toy, index) => <MyToysRow key={toy._id} toy={toy} index={index} />)
+                        mytoys.map((toy, index) => <MyToysRow key={toy._id} toy={toy} index={index} handleDelete={handleDelete} />)
                     }
                 </tbody>
             </table>
-            
+
         </div>
     );
 };
