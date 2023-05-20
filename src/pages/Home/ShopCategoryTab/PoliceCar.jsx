@@ -20,7 +20,7 @@ const PoliceCar = ({ pCar }) => {
                 <h4 className='font-bold text-2xl'>Rating: {rating}</h4>
                 <div className="flex items-center justify-between">
                     <h4 className='font-bold text-2xl'>Price: ${price}</h4>
-                    <Link to={`/${_id}`}><button className="btn-primary">View Details</button></Link>
+                    <Link to={`/toy/${_id}`}><button className="btn-primary">View Details</button></Link>
                 </div>
             </div>
         </div>
