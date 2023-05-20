@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AllToysRow = ({ toy, index }) => {
-    console.log(toy);
-    const { toy_name, seller_name, sub_category, quantity, price } = toy;
+    // console.log(toy);
+    const { _id, toy_name, seller_name, sub_category, quantity, price } = toy;
     return (
         <tr className="hover">
             <th>{index + 1}</th>
@@ -11,7 +12,7 @@ const AllToysRow = ({ toy, index }) => {
             <td>{sub_category}</td>
             <td>${price}</td>
             <td>{quantity}</td>
-            <td><button className='btn btn-sm'>View Details</button></td>
+            <td><Link to={`/toy/${_id}`} className='btn btn-sm'>View Details</Link></td>
         </tr>
     );
 };
