@@ -19,7 +19,7 @@ const UpdateToyModal = ({ toy }) => {
                 if(data.acknowledged){
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Coffee Updated Successfully',
+                        text: 'Toy Updated Successfully',
                         icon: 'success',
                         confirmButtonText: 'Cool'
                       })
@@ -96,7 +96,7 @@ const UpdateToyModal = ({ toy }) => {
                                     <span className="label-text font-bold">Sub-Category</span>
                                 </label>
                                 <select type="text" {...register("sub_category")} defaultValue={toy?.sub_category} className="select select-bordered w-full">
-                                    <option disabled selected>Pick one</option>
+                                    {/* <option disabled selected>Pick one</option> */}
                                     <option value="sports-car">Sports Car</option>
                                     <option value="police-car">Police Car</option>
                                     <option value="regular-car">Regular Car</option>

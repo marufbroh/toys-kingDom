@@ -18,7 +18,7 @@ const Register = () => {
         // console.log(name, photoUrl, email, password);
 
         if (password.length < 6) {
-            return toast.error("Minimum six characters")
+            return toast.error("Minimum six characters need")
         }
 
         createUser(email, password)

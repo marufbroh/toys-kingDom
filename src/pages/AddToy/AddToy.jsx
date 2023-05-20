@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { AuthContext } from '../../providers/AuthProviders';
+import Swal from 'sweetalert2';
 
 const AddToy = () => {
     const { user } = useContext(AuthContext)
@@ -16,6 +17,14 @@ const AddToy = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                if(data.acknowledged){
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Toy Added Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                      })
+                }
             })
     };
 
@@ -84,7 +93,7 @@ const AddToy = () => {
                             <span className="label-text font-bold">Sub-Category</span>
                         </label>
                         <select type="text" {...register("sub_category")} required className="select select-bordered w-full">
-                            <option disabled selected>Pick one</option>
+                            {/* <option disabled selected>Pick one</option> */}
                             <option value="sports-car">Sports Car</option>
                             <option value="police-car">Police Car</option>
                             <option value="regular-car">Regular Car</option>

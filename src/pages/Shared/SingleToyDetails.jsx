@@ -1,7 +1,7 @@
 import React from 'react';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
-import { Navigate, useLoaderData, useNavigate } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 
 const SingleToyDetails = () => {
     const singleToy = useLoaderData();

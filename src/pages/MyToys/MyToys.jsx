@@ -39,7 +39,7 @@ const MyToys = () => {
                             setMyToys(remaining)
                             Swal.fire(
                                 'Deleted!',
-                                'Your coffee has been deleted.',
+                                'Your Toy has been deleted.',
                                 'success'
                             )
                         }
