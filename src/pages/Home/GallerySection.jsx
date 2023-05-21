@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const GallerySection = () => {
+    useEffect(() => {
+        AOS.init({
+            offset: 200,
+            duration: 1000,
+            disable: 'mobile',
+            easing: 'ease-in-out',
+            delay: 150,
+        });
+    }, [])
+
     return (
 
-        <div className='container mx-auto my-12'>
+        <div data-aos="fade-up" className='container mx-auto my-12'>
             <div className='flex flex-col justify-center items-center mb-6'>
                 <h2 className="text-2xl lg:text-4xl font-bold mb-4">Toy Car Gallery</h2>
                 <p className="text-gray-600 lg:max-w-2xl text-center">
