@@ -23,7 +23,7 @@ const AuthProviders = ({ children }) => {
             // Profile updated!
             // ...
         }).catch((error) => {
-            console.log(error.message);
+            // console.log(error.message);
             // An error occurred
             // ...
         });

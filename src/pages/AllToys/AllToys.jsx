@@ -12,7 +12,7 @@ const AllToys = () => {
         if (!searchText) {
             return setToys(loadedToys)
         }
-        fetch(`http://localhost:5000/toySearch/${searchText}`)
+        fetch(`https://ph-assignment-11-server-marufbroh.vercel.app/toySearch/${searchText}`)
             .then(res => res.json())
             .then(data => {
                 setToys(data);

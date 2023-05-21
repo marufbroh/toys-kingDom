@@ -9,8 +9,8 @@ const UpdateToy = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
     const onSubmit = (toy) => {
-        console.log(toy);
-        fetch(`http://localhost:5000/my-toys/${toy._id}`, {
+        // console.log(toy);
+        fetch(`https://ph-assignment-11-server-marufbroh.vercel.app/my-toys/${toy._id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"
@@ -19,7 +19,7 @@ const UpdateToy = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if (data.acknowledged) {
                     // setControl(!control)
                     Swal.fire({

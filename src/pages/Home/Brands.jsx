@@ -29,7 +29,7 @@ const Brands = () => {
                     align="prev"
                     circular={true}
                     onMoveEnd={e => {
-                        console.log(e);
+                        // console.log(e);
                     }}>
 
                     <div className="panel w-32 lg:w-96"><img src={brand1} alt="" /></div>

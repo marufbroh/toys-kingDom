@@ -10,7 +10,7 @@ import 'aos/dist/aos.css';
 const ShopCategory = () => {    
     const [toys, setToys] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/category-toys")
+        fetch("https://ph-assignment-11-server-marufbroh.vercel.app/category-toys")
             .then(res => res.json())
             .then(data => {
                 // console.log(data);

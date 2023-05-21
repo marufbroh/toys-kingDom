@@ -8,7 +8,7 @@ const AddToy = () => {
     const { user } = useContext(AuthContext)
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
-        fetch("http://localhost:5000/add-toy", {
+        fetch("https://ph-assignment-11-server-marufbroh.vercel.app/add-toy", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -17,7 +17,7 @@ const AddToy = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if(data.acknowledged){
                     Swal.fire({
                         title: 'Success!',

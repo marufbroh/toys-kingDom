@@ -39,12 +39,12 @@ const NewArrivalsCar = () => {
         <div data-aos="fade-up" className='container mx-auto my-12'>
 
             <div className='flex flex-col justify-center items-center'>
-                <h2 className='text-4xl font-bold mb-6'>Rev up the Excitement: The Featured Toy Car!</h2>
+                <h2 className='text-4xl font-bold mb-6 text-center'>Rev up the Excitement: The Featured Toy Car!</h2>
                 <p className='text-center max-w-2xl mb-12'>Experience the thrill of speed with our featured toy car! This compact yet powerful race car is designed to deliver excitement and entertainment for enthusiasts of all ages. With its sleek design and attention to detail, it's the perfect addition to any toy car collection. Get ready to ignite your imagination and embark on high-speed adventures with this captivating toy car.</p>
             </div>
 
             <div className='flex flex-col justify-center items-center shadow-lg bg-white rounded-lg px-6 mb-6'>
-                <h4 className='text-xl font-bold mb-3'>Bburago Premium Series Formula 1 New Arrivals 2023</h4>
+                <h4 className='text-xl font-bold mb-3 text-center'>Bburago Premium Series Formula 1 New Arrivals 2023</h4>
                 <p className='text-center max-w-2xl'>All New 1:43 Scale Premium Collection by Bburago Available for Sale !</p>
                 <Flicking
                     align="prev"
@@ -63,13 +63,13 @@ const NewArrivalsCar = () => {
                 </Flicking>
             </div>
             <div className='flex flex-col justify-center items-center shadow-lg bg-white rounded-lg px-6 mb-6'>
-                <h4 className='text-xl font-bold mb-3'>1:18 Scale New Arrivals !!</h4>
+                <h4 className='text-xl font-bold mb-3 text-center'>1:18 Scale New Arrivals !!</h4>
                 <p className='text-center max-w-2xl'>All New 1:18 Scale Collection Up for Sale !!</p>
                 <Flicking
                     align="prev"
                     circular={true}
                     onMoveEnd={e => {
-                        console.log(e);
+                        // console.log(e);
                     }}>
 
                     <div className="panel w-32 lg:w-96"><img src={stylish1} alt="" /></div>
@@ -82,13 +82,13 @@ const NewArrivalsCar = () => {
                 </Flicking>
             </div>
             <div className='flex flex-col justify-center items-center shadow-lg bg-white rounded-lg px-6 mb-6'>
-                <h4 className='text-xl font-bold mb-3'>Global Launch !!</h4>
+                <h4 className='text-xl font-bold mb-3 text-center'>Global Launch !!</h4>
                 <p className='text-center max-w-2xl'>All new 1:24 Scale collection launched across the globe </p>
                 <Flicking
                     align="prev"
                     circular={true}
                     onMoveEnd={e => {
-                        console.log(e);
+                        // console.log(e);
                     }}>
 
                     <div className="panel w-32 lg:w-96"><img src={clasic1} alt="" /></div>

@@ -14,7 +14,7 @@ const MyToysRow = ({ toy, handleDelete }) => {
             <td>
                 <div className="avatar">
                     <div className="mask mask-squircle w-24 h-24">
-                        <img src={toy_img} alt="Service Img" />
+                        <img src={toy_img} alt="Toy Img" />
                     </div>
                 </div>
             </td>
