@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-// import logo from '../../assets/logo.png'
+import logo from '../../assets/logo.svg'
 import { AuthContext } from '../../providers/AuthProviders';
 import { Tooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css'
@@ -14,7 +14,7 @@ const Navbar = () => {
 
     return (
         <div className='bg-color'>
-            <div className="navbar container mx-auto px-4 py-5">
+            <div className="navbar container mx-auto px-4">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -73,7 +73,8 @@ const Navbar = () => {
                                 </li>}
                         </ul>
                     </div>
-                    <Link to='/'>
+                    <Link to='/' className='inline-flex items-center'>
+                        <img src={logo} alt="" />
                         <h1 className='text-2xl lg:text-4xl font-bold tracking-wide text-white cursor-pointer'>
                             Toys KingDom
                         </h1>
