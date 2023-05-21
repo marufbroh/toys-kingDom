@@ -3,6 +3,7 @@ import AllToysRow from './AllToysRow';
 import { useLoaderData } from 'react-router-dom';
 
 const AllToys = () => {
+    document.title = "Toy KingDom || All Toys"
     const loadedToys = useLoaderData();
     const [toys, setToys] = useState(loadedToys)
     const [searchText, setSearchText] = useState("")

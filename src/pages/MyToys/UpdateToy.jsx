@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2';
 
 const UpdateToy = () => {
+    document.title = "Toy KingDom || Update Toy"
     const toy = useLoaderData();
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 

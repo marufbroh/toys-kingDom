@@ -5,6 +5,7 @@ import { AuthContext } from '../../providers/AuthProviders';
 import toast from 'react-hot-toast';
 
 const Register = () => {
+    document.title = "Toy KingDom || Register"
     const { createUser, updateUserData, googleSignIn } = useContext(AuthContext);
 
     const handleRegister = (event) => {

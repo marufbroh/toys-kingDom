@@ -5,6 +5,7 @@ import { AuthContext } from '../../providers/AuthProviders';
 import toast from 'react-hot-toast';
 
 const Login = () => {
+    document.title = "Toy KingDom || Login"
     const { signIn, googleSignIn } = useContext(AuthContext);
 
     const navigate = useNavigate()

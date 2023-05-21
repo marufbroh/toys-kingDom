@@ -6,6 +6,7 @@ import MyToysRow from './MyToysRow';
 import Swal from 'sweetalert2';
 
 const MyToys = () => {
+    document.title = "Toy KingDom || My Toys"
     const { user } = useContext(AuthContext)
     // console.log(user);
     const [mytoys, setMyToys] = useState([])

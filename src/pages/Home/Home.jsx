@@ -5,6 +5,7 @@ import GallerySection from './GallerySection';
 
 
 const Home = () => {
+    document.title = "Toy KingDom || Home"
     return (
         <div>
             <Banner />

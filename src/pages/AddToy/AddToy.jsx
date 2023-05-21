@@ -4,6 +4,7 @@ import { AuthContext } from '../../providers/AuthProviders';
 import Swal from 'sweetalert2';
 
 const AddToy = () => {
+    document.title = "Toy KingDom || Add A Toy"
     const { user } = useContext(AuthContext)
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {

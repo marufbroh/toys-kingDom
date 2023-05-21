@@ -4,6 +4,7 @@ import '@smastrom/react-rating/style.css'
 import { useLoaderData, useNavigate } from 'react-router-dom';
 
 const SingleToyDetails = () => {
+    document.title = "Toy KingDom || Single Details"
     const singleToy = useLoaderData();
     const { _id, toy_img, toy_name, price, rating, sub_category, quantity, review, description, seller_name, seller_email } = singleToy;
     const navigate = useNavigate()
