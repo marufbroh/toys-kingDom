@@ -7,7 +7,7 @@ const Footer = () => {
             <footer className="footer p-10 text-base-content container mx-auto">
                 <div>
                     <span className="footer-title">Contact Us</span>
-                    <a className="link link-hover">Email: info@example.com</a>
+                    <a className="link link-hover">Email: info@toykingdom.com</a>
                     <a className="link link-hover">Mobile: +1-123-456-7890</a>
                     <a className="link link-hover">Hotline: +1-123-456-0987</a>
                     <a className="link link-hover">Address: 123 Main Street City, State Country</a>

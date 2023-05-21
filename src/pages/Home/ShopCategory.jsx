@@ -4,8 +4,10 @@ import 'react-tabs/style/react-tabs.css';
 import SportsCar from './ShopCategoryTab/SportsCar';
 import PoliceCar from './ShopCategoryTab/PoliceCar';
 import RegularCar from './ShopCategoryTab/RegularCar';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-const ShopCategory = () => {
+const ShopCategory = () => {    
     const [toys, setToys] = useState([]);
     useEffect(() => {
         fetch("http://localhost:5000/category-toys")
@@ -16,13 +18,22 @@ const ShopCategory = () => {
             })
     }, [])
 
+    useEffect(() => {
+        AOS.init({
+            offset: 200,
+            duration: 1000,
+            easing: 'ease-in-out',
+            delay: 150,
+        });
+    }, [])
+
     const sportsCars = toys.filter(toy => toy.sub_category === "sports-car")
     const policeCars = toys.filter(toy => toy.sub_category === "police-car")
     const regularCars = toys.filter(toy => toy.sub_category === "regular-car")
     // console.log(sportsCars, policeCars, regularCars);
 
     return (
-        <div className='container mx-auto my-12'>
+        <div data-aos="fade-up" className='container mx-auto my-12'>
             <div className='flex flex-col justify-center items-center mb-6'>
                 <h2 className="text-2xl lg:text-4xl font-bold mb-4">Shop by Category</h2>
                 <p className="text-gray-600 lg:max-w-2xl text-center">
